@@ -5,13 +5,14 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { FaVial, FaClock, FaFlask } from "react-icons/fa";
 import PathologyChatbotPage from '../user/PathologyChatbotPage'
+import { BASE_URL } from "../../config";
 
 
 function TestList() {
 
     const [tests, setTests] = useState([]);
 
-    const API = "http://localhost:9090/show-tests";
+    const API = `${BASE_URL}/show-tests`;
     const navigate = useNavigate();
 
     const checkLogin = (info) => {
