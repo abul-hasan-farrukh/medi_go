@@ -1,4 +1,4 @@
-# 🏥 MediGo
+# MediGo - A Pathology Portal
 
 A modern healthcare and digital pathology service portal built using **React.js** and **Vite**. MediGo aims to provide an intuitive platform for managing pathology-related services through dedicated interfaces for users, workers, and administrators.
 
@@ -6,7 +6,7 @@ This repository currently contains the frontend implementation of the project.
 
 ---
 
-## 🚀 Features
+##  Features
 
 ### 👤 User Module
 
@@ -28,7 +28,7 @@ This repository currently contains the frontend implementation of the project.
 * Management Components
 * System Monitoring Features
 
-### 🌐 General Features
+###  General Features
 
 * React Component-Based Architecture
 * Client-Side Routing
@@ -88,7 +88,7 @@ MEDI_GO
 
 ---
 
-## ⚙️ Installation
+##  Installation Steps
 
 ### Clone the Repository
 
@@ -122,7 +122,7 @@ http://localhost:5173
 
 ---
 
-## 📜 Available Scripts
+##  Available Scripts
 
 ### Start Development Server
 
@@ -150,7 +150,7 @@ npm run lint
 
 ---
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 The application follows a modular component architecture:
 
@@ -175,7 +175,7 @@ The goal of MediGo is to digitize pathology service workflows by providing:
 
 ---
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 * Spring Boot Backend Integration
 * PostgreSQL Database Integration
@@ -190,7 +190,7 @@ The goal of MediGo is to digitize pathology service workflows by providing:
 
 ---
 
-## 📚 Learning Outcomes
+##  Learning Outcomes
 
 This project helped in gaining practical experience with:
 
@@ -205,7 +205,7 @@ This project helped in gaining practical experience with:
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 ### Abul Hasan Farrukh
 
