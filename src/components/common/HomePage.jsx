@@ -5,6 +5,8 @@ import Header from './Header';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
 import PathologyChatbotPage from '../user/PathologyChatbotPage'
+import { BASE_URL } from "../../config";
+
 
 function HomePage() {
 
@@ -18,9 +20,9 @@ function HomePage() {
     const fetchHomeData = async () => {
       try {
         const [testRes, campRes, feedbackRes] = await Promise.all([
-          axios.get("http://localhost:9090/show-tests"),
-          axios.get("http://localhost:9090/showCamps"), 
-          axios.get("http://localhost:9090/fetchFeedback") 
+          axios.get(`${BASE_URL}/show-tests`),
+          axios.get(`${BASE_URL}/showCamps`), 
+          axios.get(`${BASE_URL}/fetchFeedback`) 
         ]);
 
         // Limit tests to only 6 for the home page
