@@ -4,6 +4,7 @@ import ShowCampsDetails from "./ShowCampsDetails";
 import Header from "./Header";
 import Footer from "./Footer";
 import PathologyChatbotPage from '../user/PathologyChatbotPage'
+import { BASE_URL } from "../../config";
 
 
 function ShowCamps() {
