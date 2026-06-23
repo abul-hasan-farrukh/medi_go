@@ -1,5 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
+import { CHATBOT_URL } from "../../config";
+
 
 function PathologyChatbot() {
 
@@ -12,7 +14,7 @@ function PathologyChatbot() {
     });
 
     // Backend URL
-    const API_URL = "http://localhost:8080/api/chat";
+    const API_URL = `${CHATBOT_URL}/api/chat`;
 
     const handleAsk = async () => {
 
@@ -301,7 +303,7 @@ function PathologyChatbot() {
 
                         <textarea
                             rows="2"
-                            placeholder="Ask pathology question..."
+                            placeholder="Ask pathology related questions only..."
                             value={data.question}
                             onChange={(e) =>
                                 setData((prev) => ({
