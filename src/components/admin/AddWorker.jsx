@@ -2,10 +2,11 @@ import AdminHeader from "./AdminHeader";
 import { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { BASE_URL } from "../../config";
 
 function AddWorker() {
 
-const APIURL = "http://localhost:9090/admin/addWorker";
+const APIURL = `${BASE_URL}/admin/addWorker`;
 
 const [worker, setWorker] = useState({
 email: "",
