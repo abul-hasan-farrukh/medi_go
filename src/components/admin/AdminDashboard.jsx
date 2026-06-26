@@ -4,13 +4,15 @@ import defaultProfilePic from "../../assets/user.jpeg";
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 //useLocation is used to fetch the value of state object attribute.
+import { BASE_URL } from "../../config";
+
 
 function AdminDashBoard() {
 
   const email = localStorage.getItem("adminEmail");
   const location = useLocation();
 
-  const APIURL = `http://localhost:9090/admin/adminProfile/${email}`;
+  const APIURL = `${BASE_URL}/admin/adminProfile/${email}`;
 
   const [adminData, setAdminData] = useState({ name: "", phone: "" });
   const [profilePic, setProfilePic] = useState(defaultProfilePic);
@@ -34,7 +36,7 @@ function AdminDashBoard() {
 
         //  If image exists in database
         else if (response.data.profilePic) {
-          imageUrl = `http://localhost:9090/uploads/profileimages/${response.data.profilePic}`;
+          imageUrl = `${BASE_URL}/uploads/profileimages/${response.data.profilePic}`;
         }
 
         setProfilePic(imageUrl);
