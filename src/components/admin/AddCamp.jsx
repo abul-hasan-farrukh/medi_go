@@ -2,10 +2,11 @@ import AdminHeader from "./AdminHeader";
 import { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { BASE_URL } from "../../config";
 
 function AddCamp() {
 
-    const APIURL = "http://localhost:9090/admin/addCamp";
+    const APIURL = `${BASE_URL}/admin/addCamp`;
 
     const [camp, setCamp] = useState({
         title: "",
