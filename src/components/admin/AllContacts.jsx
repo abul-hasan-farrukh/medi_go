@@ -3,10 +3,11 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import ContactDetail from './ContactDetail'
 import Swal from "sweetalert2";
+import { BASE_URL } from "../../config";
 
 function AllContacts() {
 
-const APIURL = "http://localhost:9090/admin/allContacts"
+const APIURL = `${BASE_URL}/admin/allContacts`
 
 
 
@@ -44,7 +45,7 @@ const deleteContact = async(id) => {
 
   if(!confirm.isConfirmed) return;
 
-  const DELETEAPIURL = `http://localhost:9090/admin/deleteContact/${id}`;
+  const DELETEAPIURL = `${BASE_URL}/admin/deleteContact/${id}`;
 
     try {
         const serverResponse = await axios.delete(DELETEAPIURL)
