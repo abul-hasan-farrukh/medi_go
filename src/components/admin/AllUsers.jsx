@@ -2,10 +2,11 @@ import AdminHeader from './AdminHeader'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import UserDetail from './UserDetail'
+import { BASE_URL } from "../../config";
 
 function AllUsers() {
 
-    const APIURL = "http://localhost:9090/admin/allUsers"
+    const APIURL = `${BASE_URL}/admin/allUsers`
 
     const [userdata, setUserData] = useState([{}]) 
 
