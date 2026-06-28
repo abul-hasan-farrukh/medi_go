@@ -3,6 +3,8 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import WorkerDetail from './WorkerDetail'
 import { useNavigate } from 'react-router-dom'
+import { BASE_URL } from "../../config";
+
 
 function AllWorkers() {
 
@@ -18,7 +20,7 @@ function AllWorkers() {
         } 
       },[])
 
-    const APIURL = "http://localhost:9090/admin/allWorkers"
+    const APIURL = `${BASE_URL}/admin/allWorkers`
 
     const [workerdata, setWorkerData] = useState([{}]) 
 
