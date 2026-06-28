@@ -3,10 +3,12 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import FeedbackDetail from './FeedbackDetail'
 import Swal from "sweetalert2";
+import { BASE_URL } from "../../config";
+
 
 function AllFeedbacks() {
 
-    const APIURL = "http://localhost:9090/admin/allFeedbacks"
+    const APIURL = `${BASE_URL}/admin/allFeedbacks`
 
     const [feedbackdata, setFeedbackData] = useState([]) 
 
@@ -44,7 +46,7 @@ const deleteFeedback = async (id) => {
 
       if(!confirm.isConfirmed) return;
 
-const DELETEAPIURL = `http://localhost:9090/admin/deleteFeedback/${id}`
+const DELETEAPIURL = `${BASE_URL}/admin/deleteFeedback/${id}`
 
     try {
         const serverResponse = await axios.delete(DELETEAPIURL)
