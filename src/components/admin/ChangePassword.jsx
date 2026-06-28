@@ -4,13 +4,14 @@ import AdminHeader from "./AdminHeader";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { BASE_URL } from "../../config";
 
 function ChangePassword() {
 
     const email = localStorage.getItem("adminEmail")
     const navigate = useNavigate()
 
-    const APIURL = `http://localhost:9090/admin/updatePassword/${email}`
+    const APIURL = `${BASE_URL}/admin/updatePassword/${email}`
 
     const [passwordData, setPasswordData] = useState({
         oldpassword: "",
