@@ -3,12 +3,13 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Header from "../common/Header";
 import Footer from "../common/Footer";
+import { BASE_URL } from "../../config";
 
 function TestList() {
 
     const [tests, setTests] = useState([]);
 
-    const API = "http://localhost:9090/show-tests";
+    const API = `${BASE_URL}/show-tests`;
     const navigate = useNavigate();
 
     const checkLogin = (info) => {
