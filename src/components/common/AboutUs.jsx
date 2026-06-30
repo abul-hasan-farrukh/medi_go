@@ -1,11 +1,14 @@
 import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import PathologyChatbotPage from '../user/PathologyChatbotPage'
+
 
 function AboutUs() {
   return (
     <>
       <Header />
+      <PathologyChatbotPage />
       <div style={{fontFamily: "poppins"}}>
 
       
