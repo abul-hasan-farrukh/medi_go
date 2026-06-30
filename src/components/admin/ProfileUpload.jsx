@@ -3,13 +3,14 @@ import axios from 'axios'
 import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AdminHeader from './AdminHeader'
-import Swal from "sweetalert2"; // ✅ added
+import Swal from "sweetalert2"; 
+import { BASE_URL } from "../../config";
 
 function ProfileUpload() {
 
     const fileRef = useRef(null);
     const navigate = useNavigate()
-    const UPLOADURL = "http://localhost:9090/admin/uploadPic"
+    const UPLOADURL = `${BASE_URL}/admin/uploadPic`
 
     const [profilePic, setProfilePic] = useState(null)
     const email = localStorage.getItem("adminEmail")
