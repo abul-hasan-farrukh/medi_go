@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import FetchFeedbackDetails from "./FetchFeedbackDetails";
+import { BASE_URL } from "../../config";
 
 function FetchFeedback() {
 
-  const APIURL = "http://localhost:9090/fetchFeedback";
+  const APIURL = `${BASE_URL}/fetchFeedback`;
 
   const [feedbackData, setFeedbackData] = useState([]);
 
