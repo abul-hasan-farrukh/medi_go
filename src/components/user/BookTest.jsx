@@ -3,10 +3,11 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import UserHeader from "./UserHeader";
+import { BASE_URL } from "../../config";
 
 function BookTest() {
   const [tests, setTests] = useState([]);
-  const APIURL = "http://localhost:9090/user/viewTests";
+  const APIURL = `${BASE_URL}/user/viewTests`;
 
   useEffect(() => {
     loadTests();
