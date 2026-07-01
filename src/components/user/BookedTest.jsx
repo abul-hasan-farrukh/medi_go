@@ -3,19 +3,20 @@ import axios from "axios";
 import { QRCodeCanvas } from "qrcode.react";
 import { useNavigate } from "react-router-dom";
 import UserHeader from "./UserHeader";
+import { BASE_URL } from "../../config";
 
 function BookedTests() {
 const navigate=useNavigate()
   const [tests, setTests] = useState([]);
   const [showQR, setShowQR] = useState(false);
   const [transactionId, setTransactionId] = useState("");
-  const [bookingDate, setBookingDate] = useState(""); // ✅ NEW
+  const [bookingDate, setBookingDate] = useState(""); 
 
   const email = localStorage.getItem("userEmail");
 
-  const API_URL = `http://localhost:9090/user/bookings/${email}`;
-  const API_DELETE = "http://localhost:9090/user/deleteBooking";
-  const API_PAYMENT = "http://localhost:9090/user/payNow";
+  const API_URL = `${BASE_URL}/user/bookings/${email}`;
+  const API_DELETE = `${BASE_URL}/user/deleteBooking`;
+  const API_PAYMENT = `${BASE_URL}/user/payNow`;
 
   useEffect(() => {
     loadBookings();
