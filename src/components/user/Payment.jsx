@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useLocation } from "react-router-dom";
 import axios from 'axios';
+import { BASE_URL } from "../../config";
 
 function Payment() {
 
   const location = useLocation();
     
   const userEmail = localStorage.getItem("userEmail")
-  const APIURL="http://localhost:9090/user/payNow"
+  const APIURL=`${BASE_URL}/user/payNow`
 
 
   const totalAmount = location.state.totalAmount;
