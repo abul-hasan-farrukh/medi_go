@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import Swal from 'sweetalert2'
 import axios from 'axios'
+import { BASE_URL } from "../../config";
 
 function Feedback() {
 
   //Sending request to backend to save data in database
     const email = localStorage.getItem("userEmail")
 
-  const APIURL = "http://localhost:9090/user/feedback"
+  const APIURL = `${BASE_URL}/user/feedback`
 
   const [data, setData] = useState({ email: email, review: "", rating: "" })
 
