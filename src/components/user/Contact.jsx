@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'
 import axios from 'axios'
 import UserHeader from './UserHeader'
 import { useNavigate } from 'react-router-dom'
+import { BASE_URL } from "../../config";
 
 
 function Contact() {
@@ -22,7 +23,7 @@ function Contact() {
 
 
     //Sending request to backend to save data in database
-    const APIURL = "http://localhost:9090/addContact"
+    const APIURL = `${BASE_URL}/addContact`
     const [data, setData] = useState({ name: "", email: "", phone: "", question: "" })
 
     const [validate, setValidate] = useState(false)
