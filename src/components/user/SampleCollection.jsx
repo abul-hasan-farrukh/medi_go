@@ -2,10 +2,11 @@ import { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import UserHeader from "./UserHeader";
+import { BASE_URL } from "../../config";
 
 function SampleCollection() {
 
-    const APIURL = "http://localhost:9090/user/sampleCollectionRequest";
+    const APIURL = `${BASE_URL}/user/sampleCollectionRequest`;
 
     const [sample, setSample] = useState({
         email: localStorage.getItem("userEmail") || "",
