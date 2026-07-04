@@ -4,6 +4,7 @@ import UserHeader from './UserHeader'
 import defaultProfilePic from "../../assets/user.jpeg";
 import { useLocation } from 'react-router-dom';
 //useLocation is used to fetch the value of state object attribute.
+import { BASE_URL } from "../../config";
 
 
 
@@ -12,7 +13,7 @@ function UserDashboard() {
     const email = localStorage.getItem("userEmail")
     const location = useLocation();
 
-    const APIURL = `http://localhost:9090/user/userProfile/${email}` //Injecting email in the path
+    const APIURL = `${BASE_URL}/user/userProfile/${email}` //Injecting email in the path
 
     const [userdata, setUserdata] = useState({ name: "", phone: "", city: "" })
     const [profilePic, setProfilePic] = useState(defaultProfilePic);
@@ -35,7 +36,7 @@ function UserDashboard() {
 
                 //  If image exists in database
                 else if (serverResponse.data.profilePic) {
-                    imageUrl = `http://localhost:9090/uploads/userimages/${serverResponse.data.profilePic}`;
+                    imageUrl = `${BASE_URL}/uploads/userimages/${serverResponse.data.profilePic}`;
                 }
 
                 setProfilePic(imageUrl);
