@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import UserHeader from "./UserHeader";
+import { BASE_URL } from "../../config";
 
 function RequestStatus() {
 
@@ -27,7 +28,7 @@ function RequestStatus() {
         const fetchRequests = async () => {
             try {
                 const res = await axios.get(
-                    `http://localhost:9090/user/myRequests/${userEmail}`
+                    `${BASE_URL}/user/myRequests/${userEmail}`
                 );
                 setRequestData(res.data);
             } catch (error) {
