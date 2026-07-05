@@ -4,6 +4,7 @@ import UserHeader from './UserHeader'
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { BASE_URL } from "../../config";
 
 
 function UserEditProfile() {
@@ -11,8 +12,8 @@ function UserEditProfile() {
     const email = localStorage.getItem("userEmail")
     const navigate = useNavigate();
 
-    const APIURL = `http://localhost:9090/user/userProfile/${email}`
-    const EDITAPIURL = `http://localhost:9090/user/editProfile/${email}`
+    const APIURL = `${BASE_URL}/user/userProfile/${email}`
+    const EDITAPIURL = `${BASE_URL}/user/editProfile/${email}`
 
     const [userdata, setUserdata] = useState({
         name: "",
