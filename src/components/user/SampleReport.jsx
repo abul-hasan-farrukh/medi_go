@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import UserHeader from "./UserHeader";
+import { BASE_URL } from "../../config";
 
 function SampleReport() {
 
@@ -8,7 +9,7 @@ function SampleReport() {
     const [reportData, setReportData] = useState([]);
     
     const userEmail = localStorage.getItem("userEmail");
-    const API_URL = `http://localhost:9090/user/myRequests/${userEmail}`
+    const API_URL = `${BASE_URL}/user/myRequests/${userEmail}`
 
     // Fetch all user requests
     useEffect(() => {
@@ -40,7 +41,7 @@ function SampleReport() {
     // download report
     const downloadReport = (fileName) => {
 
-        const fileURL = `http://localhost:9090/uploads/samplereports/${fileName}`;
+        const fileURL = `${BASE_URL}/uploads/samplereports/${fileName}`;
 
         // open file in new tab
         window.open(fileURL, "_blank");
