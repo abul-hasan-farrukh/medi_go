@@ -4,12 +4,14 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
 import axios from 'axios'
+import { BASE_URL } from "../../config";
+
 
 function UserLogin() {
 
   const navigate = useNavigate()
 
-  const APIURL = "http://localhost:9090/user/login"
+  const APIURL = `${BASE_URL}/user/login`
 
   const [data, setData] = useState({ email: "", password: "" })
   const [validate, setValidate] = useState(false)
