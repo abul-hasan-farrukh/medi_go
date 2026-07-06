@@ -3,11 +3,12 @@ import Swal from 'sweetalert2'
 import Footer from '../common/Footer';
 import Header from '../common/Header';
 import axios from 'axios'
+import { BASE_URL } from "../../config";
 
 function UserReg() {
 
     //Sending request to backend to save data in database
-    const APIURL = "http://localhost:9090/user/registration"
+    const APIURL = "${BASE_URL}/user/registration"
 
     const [data, setData] = useState({ email: "", name: "", phone: "", password: "", city: "" })
 
