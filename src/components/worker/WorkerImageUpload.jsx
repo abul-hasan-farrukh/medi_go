@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import WorkerHeader from './WorkerHeader'
+import { BASE_URL } from "../../config";
 
 function WorkerImageUpload() {
 
   const navigate = useNavigate()
-    const UPLOADURL = "http://localhost:9090/worker/uploadPic"
+    const UPLOADURL = `${BASE_URL}/worker/uploadPic`
 
     const [profilePic, setProfilePic] = useState(null)
     const email = localStorage.getItem("workerEmail")
