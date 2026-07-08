@@ -4,13 +4,14 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
 import axios from 'axios'
+import { BASE_URL } from "../../config";
 
 function WorkerLogin() {
 
   const navigate = useNavigate()
 
   // Worker Login Backend API
-  const APIURL = "http://localhost:9090/worker/login"
+  const APIURL = `${BASE_URL}/worker/login`
 
   const [data, setData] = useState({
     email: "",
