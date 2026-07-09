@@ -3,13 +3,14 @@ import axios from "axios";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import UserHeader from "./UserHeader";
+import { BASE_URL } from "../../config";
 
 function ViewTestBookingStatus() {
 
   const [groupedData, setGroupedData] = useState({});
 
   const email = localStorage.getItem("userEmail");
-  const API_URL = `http://localhost:9090/user/bookingStatus/${email}`;
+  const API_URL = `${BASE_URL}/user/bookingStatus/${email}`;
 
   useEffect(() => {
     loadData();
@@ -209,7 +210,7 @@ function ViewTestBookingStatus() {
                   onClick={() => {
                     if (isReportAvailable) {
                       window.open(
-                        `http://localhost:9090/uploads/testreports/${reportFile}`,
+                        `${BASE_URL}/uploads/testreports/${reportFile}`,
                         "_blank"
                       );
                     }
