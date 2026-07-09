@@ -2,10 +2,11 @@ import WorkerHeader from "./WorkerHeader";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import RequestDetail from "./RequestDetail";
+import { BASE_URL } from "../../config";
 
 function AllRequest() {
 
-    const APIURL = "http://localhost:9090/worker/allSampleRequests"; // backend API defined in workerController
+    const APIURL = `${BASE_URL}/worker/allSampleRequests`; // backend API defined in workerController
 
     const [requestData, setRequestData] = useState([]);
 
