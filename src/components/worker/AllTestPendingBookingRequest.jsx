@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import WorkerHeader from "./WorkerHeader";
+import { BASE_URL } from "../../config";
 
 function AllTestPendingBookingRequest() {
 
   const [groupedData, setGroupedData] = useState({});
 
-  const API_URL = "http://localhost:9090/worker/pendingRequests";
-  const VERIFY_API = "http://localhost:9090/worker/verifyPayment";
-  const VISIT_API = "http://localhost:9090/worker/updateVisitStatus";
+  const API_URL = `${BASE_URL}/worker/pendingRequests`;
+  const VERIFY_API = `${BASE_URL}/worker/verifyPayment`;
+  const VISIT_API = `${BASE_URL}/worker/updateVisitStatus`;
 
   useEffect(() => {
     loadRequests();
