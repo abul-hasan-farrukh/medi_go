@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import UploadReport from "./UploadReport";
+import { BASE_URL } from "../../config";
+
 
 // It is a parent component of UploadReport.jsx because
 // It holds main data (requestArray)
@@ -44,7 +46,7 @@ function RequestDetail({ requestArray, setRequestData }) {
 
         const fetchWorkers = async () => {
             try {
-                const res = await axios.get("http://localhost:9090/worker/sampleCollectors");
+                const res = await axios.get(`${BASE_URL}/worker/sampleCollectors`);
                 setWorkers(res.data);
             } catch (error) {
                 console.log(error);
@@ -75,7 +77,7 @@ function RequestDetail({ requestArray, setRequestData }) {
 
         try {
             const res = await axios.put(
-                `http://localhost:9090/worker/assignRequest/${id}`,
+                `${BASE_URL}/worker/assignRequest/${id}`,
                 {
                     name: worker.name,
                     email: worker.email,
@@ -110,7 +112,7 @@ function RequestDetail({ requestArray, setRequestData }) {
     const markCompleted = async (id) => {
 
         try {
-            await axios.put(`http://localhost:9090/worker/completeRequest/${id}`);
+            await axios.put(`${BASE_URL}/worker/completeRequest/${id}`);
 
             const updatedArray = requestArray.map((obj) => {
                 if (obj.id === id) {
@@ -141,7 +143,7 @@ function RequestDetail({ requestArray, setRequestData }) {
         if (!confirm.isConfirmed) return;
 
         try {
-            await axios.delete(`http://localhost:9090/worker/deleteRequest/${id}`);
+            await axios.delete(`${BASE_URL}/worker/deleteRequest/${id}`);
 
             // REMOVE FROM UI after deleting
             const updatedArray = requestArray.filter((obj) => obj.id !== id);
