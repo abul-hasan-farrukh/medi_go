@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import SampleCollectorHeader from "./SampleCollectorHeader";
+import { BASE_URL } from "../../config";
 
 function AssignedRequest() {
-    const APIURL = "http://localhost:9090/worker/sampleData"
+    const APIURL = `${BASE_URL}/worker/sampleData`
 
     const workerEmail = localStorage.getItem("workerEmail");
 
@@ -81,7 +82,7 @@ function AssignedRequest() {
         const fetchAssignedRequest = async () => {
             try {
                 const res = await axios.get(
-                    `http://localhost:9090/worker/assignedRequests/${workerEmail}`
+                    `${BASE_URL}/worker/assignedRequests/${workerEmail}`
                 );
                 setRequestData(res.data);
             } catch (error) {
@@ -108,7 +109,7 @@ function AssignedRequest() {
         }
 
         try {
-            await axios.put(`http://localhost:9090/worker/completeRequest/${id}`);
+            await axios.put(`${BASE_URL}/worker/completeRequest/${id}`);
 
             const updatedArray = requestData.map((obj) => {
                 if (obj.id === id) {
@@ -142,7 +143,7 @@ function AssignedRequest() {
         if (!confirm.isConfirmed) return;
 
         try {
-            await axios.delete(`http://localhost:9090/worker/deleteRequest/${id}`);
+            await axios.delete(`${BASE_URL}/worker/deleteRequest/${id}`);
 
             const updatedArray = requestData.filter((obj) => obj.id !== id);
 
