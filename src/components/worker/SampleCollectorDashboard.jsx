@@ -3,14 +3,15 @@ import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import defaultProfilePic from "../../assets/user.jpeg";
 import SampleCollectorHeader from './SampleCollectorHeader';
+import { BASE_URL } from "../../config";
 
 function SampleCollectorDashboard() {
 
     const email = localStorage.getItem("workerEmail")
     const location = useLocation();
 
-    const PROFILE_API = `http://localhost:9090/worker/workerProfile/${email}`
-    const REQUEST_API = `http://localhost:9090/worker/assignedRequests/${email}`
+    const PROFILE_API = `${BASE_URL}/worker/workerProfile/${email}`
+    const REQUEST_API = `${BASE_URL}/worker/assignedRequests/${email}`
 
     const [userdata, setUserdata] = useState({
         name: "",
@@ -36,7 +37,7 @@ function SampleCollectorDashboard() {
                     imageUrl = location.state.imageURL;
                 }
                 else if (res.data.profilePic) {
-                    imageUrl = `http://localhost:9090/uploads/workerimages/${res.data.profilePic}`;
+                    imageUrl = `${BASE_URL}/uploads/workerimages/${res.data.profilePic}`;
                 }
 
                 setProfilePic(imageUrl)
@@ -68,9 +69,9 @@ function SampleCollectorDashboard() {
     try {
 
         if (status === "completed") {
-            await axios.put(`http://localhost:9090/worker/completeRequest/${id}`);
+            await axios.put(`${BASE_URL}/worker/completeRequest/${id}`);
         } else if (status === "rejected") {
-            await axios.delete(`http://localhost:9090/worker/deleteRequest/${id}`);
+            await axios.delete(`${BASE_URL}/worker/deleteRequest/${id}`);
         }
 
         setRequests(prev =>
