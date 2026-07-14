@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { BASE_URL } from "../../config";
+
 
 // It is a child component of RequestDetail.jsx because 
 // it is used inside RequestDetail.jsx as import at the top
@@ -67,7 +69,7 @@ function UploadReport({ requestId, onUploadSuccess }) {
         try {
 
             const res = await axios.post(
-                `http://localhost:9090/worker/uploadReport/${requestId}`,
+                `${BASE_URL}/worker/uploadReport/${requestId}`,
                 formData
             );
 
