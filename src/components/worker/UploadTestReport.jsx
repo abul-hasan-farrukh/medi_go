@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import WorkerHeader from "./WorkerHeader";
+import { BASE_URL } from "../../config";
+
 
 function UploadTestReport() {
 
   const [data, setData] = useState({});
   const [files, setFiles] = useState({});
 
-  const API_URL = "http://localhost:9090/worker/pendingReports";
-  const UPLOAD_API = "http://localhost:9090/worker/uploadTestReport";
+  const API_URL = `${BASE_URL}/worker/pendingReports`;
+  const UPLOAD_API = `${BASE_URL}/worker/uploadTestReport`;
 
   useEffect(() => {
     loadData();
