@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import WorkerHeader from "./WorkerHeader";
+import { BASE_URL } from "../../config";
+
 
 function ViewAllConfirmedRequest() {
 
@@ -8,8 +10,8 @@ function ViewAllConfirmedRequest() {
   const [date, setDate] = useState("");
   const [search, setSearch] = useState("");
 
-  const API_URL = "http://localhost:9090/worker/confirmedRequests";
-  const VISIT_API = "http://localhost:9090/worker/updateVisitStatus";
+  const API_URL = `${BASE_URL}/worker/confirmedRequests`;
+  const VISIT_API = `${BASE_URL}/worker/updateVisitStatus`;
 
   useEffect(() => {
     loadData();
