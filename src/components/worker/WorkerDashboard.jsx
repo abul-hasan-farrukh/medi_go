@@ -4,6 +4,7 @@ import WorkerHeader from './WorkerHeader'
 import defaultProfilePic from "../../assets/user.jpeg";
 import { useLocation } from 'react-router-dom';
 //useLocation is used to fetch the value of state object attribute.
+import { BASE_URL } from "../../config";
 
 
 
@@ -12,7 +13,7 @@ function WorkerDashboard() {
     const email = localStorage.getItem("workerEmail")
     const location = useLocation();
 
-    const APIURL = `http://localhost:9090/worker/workerProfile/${email}` //Injecting email in the path, this is a backend API path
+    const APIURL = `${BASE_URL}/worker/workerProfile/${email}` //Injecting email in the path, this is a backend API path
 
     const [userdata, setUserdata] = useState({
         name: "",
@@ -41,7 +42,7 @@ function WorkerDashboard() {
 
                 //  If image exists in database
                 else if (serverResponse.data.profilePic) {
-                    imageUrl = `http://localhost:9090/uploads/workerimages/${serverResponse.data.profilePic}`;
+                    imageUrl = `${BASE_URL}/uploads/workerimages/${serverResponse.data.profilePic}`;
                 }
 
                 setProfilePic(imageUrl);
