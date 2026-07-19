@@ -4,6 +4,7 @@ import WorkerHeader from './WorkerHeader'
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { BASE_URL } from "../../config";
 
 
 function WorkerEditProfile() {
@@ -11,8 +12,8 @@ function WorkerEditProfile() {
     const email = localStorage.getItem("workerEmail")
     const navigate = useNavigate();
 
-    const APIURL = `http://localhost:9090/worker/workerProfile/${email}`
-    const EDITAPIURL = `http://localhost:9090/worker/editProfile/${email}`
+    const APIURL = `${BASE_URL}/worker/workerProfile/${email}`
+    const EDITAPIURL = `${BASE_URL}/worker/editProfile/${email}`
 
     const [workerdata, setWorkerdata] = useState({
         name: "",
