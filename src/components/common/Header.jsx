@@ -27,7 +27,7 @@ function Header() {
         <div className="container">
 
           {/* Logo */}
-          <Link className="navbar-brand fw-bold fs-3" to="/home-page" style={{ color: "#2563eb" }}>
+          <Link className="navbar-brand fw-bold fs-3" to="/" style={{ color: "#2563eb" }}>
             <img src="" alt="" className="d-inline-block align-text-top" />
            <i className="fas fa-microscope"></i> MediGo
           </Link>
@@ -41,7 +41,7 @@ function Header() {
 
             {/* Center Links */}
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-              <li className="nav-item"><Link className="nav-link custom-link px-2" to="/home-page">Home</Link></li>
+              <li className="nav-item"><Link className="nav-link custom-link px-2" to="/">Home</Link></li>
               <li className="nav-item"><Link className="nav-link custom-link px-2" to="/about">About Us</Link></li>
               <li className="nav-item"><Link className="nav-link custom-link px-2" to="/contact">Contact Us</Link></li>
               <li className="nav-item"><Link className="nav-link custom-link px-2" to="/show-camps">Camps</Link></li>
