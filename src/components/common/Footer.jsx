@@ -117,7 +117,7 @@ function Footer() {
         {/* <!-- Copyright --> */}
         <div className="text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
           © 2026 MediGo |
-          <a className="text-white ms-1" style={{ textDecoration: "none" }} href=""> Designed & Developed by Abul Hasan Farrukh</a>
+          <a className="text-white ms-1" style={{ textDecoration: "none" }} href="https://github.com/abul-hasan-farrukh"> Designed & Developed by Abul Hasan Farrukh</a>
         </div>
         {/* <!-- Copyright --> */}
 
