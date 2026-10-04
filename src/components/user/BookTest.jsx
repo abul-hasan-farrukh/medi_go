@@ -47,7 +47,7 @@ function BookTest() {
       };
 
       const res = await axios.post(
-        "http://localhost:9090/user/bookTest",
+        `${BASE_URL}/user/bookTest`,
         bookingData
       );
 
