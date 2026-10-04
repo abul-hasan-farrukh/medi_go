@@ -52,7 +52,7 @@ function HomePage() {
 <div className="demo-credentials-wrapper">
     <div className="demo-credentials-label">
     <i className="fas fa-key me-2"></i>
-    Recruiter Demo Access
+    Access Credentials:
 </div>
 
     <div className="demo-credentials-track">
