@@ -38,6 +38,8 @@ function UserReg() {
         const alphaRegex = /^[A-Za-z\s]*$/;
         const numberRegex = /^[0-9]*$/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const passwordRegex = /^.{8,}$/
+
 
         if (!emailRegex.test(data.email)) {
             // alert("Enter valid email address")
@@ -75,6 +77,15 @@ function UserReg() {
 
             return;
         }
+
+        if (!passwordRegex.test(data.password)) {
+              Swal.fire({
+                title: "Input Field Error",
+                text: "Password must be at least 8 characters long",
+                icon: "error"
+              })
+              return
+            }
 
         //code for backend processing start below
         try {
