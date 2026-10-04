@@ -61,9 +61,8 @@ function TestList() {
                 </h3>
 
                 <div className="row">
-
-                    {tests.length === 0 ? (
-                        <h5 className="text-center">No Tests Available</h5>
+                    {tests.length === 0 ? ( //performing conditional rendering here
+                        <h5 className="text-center">I have used FREE PostgreSQL Database service, so tests may take upto 2 mins. to appear</h5>
                     ) : (
                         tests.map((item, index) => (
                             <div className="col-md-4 mb-4" key={index}>
