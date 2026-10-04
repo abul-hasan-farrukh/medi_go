@@ -8,7 +8,7 @@ import PathologyChatbotPage from '../user/PathologyChatbotPage'
 function ContactUs() {
 
     //Sending request to backend to save data in database
-    const APIURL = "http://localhost:9090/addContact"
+    const APIURL = `${BASE_URL}/addContact`;
     const [data, setData] = useState({ name: "", email: "", phone: "", question: "" })
 
     const [validate, setValidate] = useState(false)
