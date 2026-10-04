@@ -174,7 +174,7 @@ function HomePage() {
                   </div>
                 </div>
               </div>
-            )) : <p className="text-center">Loading tests...</p>}
+            )) : <p className="text-center">I have used FREE PostgreSQL Database service, so tests may take upto 2 mins. to appear</p>}
           </div>
         </div>
       </section>
@@ -230,7 +230,7 @@ function HomePage() {
                   </div>
                 </div>
               </div>
-            )) : <p className="text-center">No upcoming campaigns found.</p>}
+            )) : <p className="text-center">I have used FREE PostgreSQL Database service, so Campaigns may take upto 2 mins. to appear.</p>}
           </div>
         </div>
       </section>
@@ -284,7 +284,7 @@ function HomePage() {
                   </div>
                 </div>
               </div>
-            )) : <p className="text-center">No patient feedback yet.</p>}
+            )) : <p className="text-center">I have used FREE PostgreSQL Database service, so Reviews may take upto 2 mins. to appear</p>}
           </div>
         </div>
       </section>
