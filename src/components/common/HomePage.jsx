@@ -47,28 +47,109 @@ function HomePage() {
     <div style={{ fontFamily: "'Poppins', sans-serif", color: "#333" }}>
       {/* --- NAVBAR --- */}
       <Header/>
-      <PathologyChatbotPage />
-      {/* <nav className="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-3">
-        <div className="container">
-          <a className="navbar-brand fw-bold text-primary fs-3" href="#">
-            <i className="fas fa-microscope me-2"></i>MediGo
-          </a>
-          <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto align-items-center fw-medium">
-              <li className="nav-item"><a className="nav-link px-3" href="#">Home</a></li>
-              <li className="nav-item"><a className="nav-link px-3" href="#services">Services</a></li>
-              <li className="nav-item"><a className="nav-link px-3" href="#tests">Tests</a></li>
-              <li className="nav-item"><a className="nav-link px-3" href="#camps">Camps</a></li>
-              <li className="nav-item ms-lg-3">
-                <a className="btn btn-primary rounded-pill px-4 shadow-sm" href="#">Book Appointment</a>
-              </li>
-            </ul>
-          </div>
+
+      {/* --- RECRUITER DEMO CREDENTIALS TICKER --- */}
+<div className="demo-credentials-wrapper">
+    <div className="demo-credentials-label">
+    <i className="fas fa-key me-2"></i>
+    Recruiter Demo Access
+</div>
+
+    <div className="demo-credentials-track">
+        <div className="demo-credentials-content">
+
+            <span className="credential-item">
+                <strong>Admin:</strong>
+                admin@gmail.com
+                <span className="credential-password">
+                    Password: admin1234
+                </span>
+                <span className="credential-login">
+                    Login: /admin/admin-login
+                </span>
+            </span>
+
+            <span className="credential-separator">•</span>
+
+            <span className="credential-item">
+                <strong>User:</strong>
+                abulhasanfarrukh@gmail.com
+                <span className="credential-password">
+                    Password: abcd1234
+                </span>
+            </span>
+
+            <span className="credential-separator">•</span>
+
+            <span className="credential-item">
+                <strong>Sample Collector:</strong>
+                sample@gmail.com
+                <span className="credential-password">
+                    Password: abcd1234
+                </span>
+            </span>
+
+            <span className="credential-separator">•</span>
+
+            <span className="credential-item">
+                <strong>Executive:</strong>
+                executive@gmail.com
+                <span className="credential-password">
+                    Password: abcd1234
+                </span>
+            </span>
+
+            {/* Duplicate content for seamless infinite scrolling */}
+
+            <span className="credential-separator">•</span>
+
+            <span className="credential-item">
+                <strong>Admin:</strong>
+                admin@gmail.com
+                <span className="credential-password">
+                    Password: admin1234
+                </span>
+                <span className="credential-login">
+                    Login: /admin/admin-login
+                </span>
+            </span>
+
+            <span className="credential-separator">•</span>
+
+            <span className="credential-item">
+                <strong>User:</strong>
+                abulhasanfarrukh@gmail.com
+                <span className="credential-password">
+                    Password: abcd1234
+                </span>
+            </span>
+
+            <span className="credential-separator">•</span>
+
+            <span className="credential-item">
+                <strong>Sample Collector:</strong>
+                sample@gmail.com
+                <span className="credential-password">
+                    Password: abcd1234
+                </span>
+            </span>
+
+            <span className="credential-separator">•</span>
+
+            <span className="credential-item">
+                <strong>Executive:</strong>
+                executive@gmail.com
+                <span className="credential-password">
+                    Password: abcd1234
+                </span>
+            </span>
+
         </div>
-      </nav> */}
+    </div>
+</div>
+
+      <PathologyChatbotPage />
+      
 
       {/* --- HERO SECTION --- */}
       <header className="py-5" style={{ background: "linear-gradient(135deg, #f8fbff 0%, #e2efff 100%)", minHeight: "85vh", display: "flex", alignItems: "center" }}>
@@ -321,6 +402,117 @@ function HomePage() {
       </footer> */}
 
       <style>{`
+
+        /* ================================
+   RECRUITER DEMO CREDENTIALS TICKER
+   ================================ */
+
+.demo-credentials-wrapper {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    background: #f8fbff;
+    border-top: 1px solid #e2efff;
+    border-bottom: 1px solid #dbeafe;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.demo-credentials-label {
+    flex-shrink: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 22px;
+    background: #2563eb;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    z-index: 2;
+    box-shadow: 5px 0 12px rgba(37, 99, 235, 0.15);
+}
+
+.demo-credentials-track {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.demo-credentials-content {
+    display: inline-flex;
+    align-items: center;
+    min-width: max-content;
+    animation: credentialTicker 35s linear infinite;
+}
+
+.credential-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0 22px;
+    color: #475569;
+    font-size: 13px;
+}
+
+.credential-item strong {
+    color: #2563eb;
+    font-weight: 700;
+}
+
+.credential-password {
+    color: #64748b;
+}
+
+.credential-login {
+    color: #0f766e;
+    font-weight: 600;
+}
+
+.credential-separator {
+    color: #93c5fd;
+    font-size: 18px;
+}
+
+.demo-credentials-wrapper:hover .demo-credentials-content {
+    animation-play-state: paused;
+}
+
+@keyframes credentialTicker {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .demo-credentials-wrapper {
+        height: 44px;
+    }
+
+    .demo-credentials-label {
+        padding: 0 14px;
+        font-size: 12px;
+    }
+
+    .credential-item {
+        font-size: 12px;
+        margin: 0 15px;
+    }
+
+    .credential-login {
+        display: none;
+    }
+}
+
+
         .transition-hover:hover { transform: translateY(-10px); transition: all 0.3s ease; box-shadow: 0 1rem 3rem rgba(0,0,0,.1) !important; }
         .bg-primary-soft { background-color: #e2efff; }
         .pointer { cursor: pointer; }
