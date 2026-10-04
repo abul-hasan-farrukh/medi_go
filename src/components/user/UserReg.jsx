@@ -8,7 +8,7 @@ import { BASE_URL } from "../../config";
 function UserReg() {
 
     //Sending request to backend to save data in database
-    const APIURL = "${BASE_URL}/user/registration"
+    const APIURL = `${BASE_URL}/user/registration`
 
     const [data, setData] = useState({ email: "", name: "", phone: "", password: "", city: "" })
 
